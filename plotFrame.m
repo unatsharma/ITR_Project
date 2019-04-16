@@ -1,0 +1,23 @@
+function frame = plotFrame(origin, name)
+%PLOTFRAME Summary of this function goes here
+%   Detailed explanation goes here
+
+%     plot3(origin(1), origin(2), origin(3),'k.');
+    lz = line([origin(1) origin(1)],[origin(2) origin(2)],...
+        [origin(3) origin(3)+2],'color','g','linewidth',1.5,...
+        'linestyle','-.');
+    ly = line([origin(1) origin(1)],[origin(2) origin(2)+2],...
+        [ origin(3) origin(3)],'color','r','linewidth',1.5,...
+        'linestyle','-.');
+    lx = line([origin(1) origin(1)+2],[origin(2) origin(2)],...
+        [origin(3) origin(3)],'color','b','linewidth',1.5,...
+        'linestyle','-.');
+
+    % Name of the JCS.
+    JC_name = text('string', name,...
+        'position',[origin(1)-0.5 origin(2) origin(3)-0.3]);
+    
+    frame = {lx, ly, lz, JC_name};
+    
+end
+
